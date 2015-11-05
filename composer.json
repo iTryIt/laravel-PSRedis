@@ -1,5 +1,5 @@
 {
-    "name": "iTryIt/laravel-ps-redis",
+    "name": "itryit/laravel-ps-redis",
     "description": "A simple sentinel/redis driver wrapper for laravel. Rewrited For jamescauwelier/psredis",
     "authors": [
         {
