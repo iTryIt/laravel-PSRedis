@@ -3,7 +3,7 @@
     "description": "A simple sentinel/redis driver wrapper for laravel. Rewrited For jamescauwelier/psredis",
     "authors": [
         {
-            "name": "Damien Russell",
+            "name": "Damien Russell(origin), iTryIt",
             "email": "drussell@indatus.com"
         }
     ],
