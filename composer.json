@@ -1,6 +1,6 @@
 {
-    "name": "indatus/laravel-ps-redis",
-    "description": "A simple sentinel/redis driver wrapper for laravel.",
+    "name": "iTryIt/laravel-ps-redis",
+    "description": "A simple sentinel/redis driver wrapper for laravel. Rewrited For jamescauwelier/psredis",
     "authors": [
         {
             "name": "Damien Russell",
@@ -9,11 +9,11 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*",
+        "illuminate/support": "5.*",
         "jamescauwelier/psredis": "~1.1"
     },
     "require-dev": {
-        "laravel/framework": "4.2.*",
+        "laravel/framework": "5.*",
         "phpunit/phpunit": "4.*",
         "mockery/mockery": "0.9.*@dev"
     },
