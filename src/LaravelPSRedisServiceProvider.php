@@ -1,4 +1,4 @@
-<?php namespace LaravelPSRedisHelper;
+<?php namespace Itryit\LaravelPSRedisHelper;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Redis\Database;

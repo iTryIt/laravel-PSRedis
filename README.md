@@ -14,7 +14,6 @@ We do this by asking your [Redis Sentinels](http://redis.io/topics/sentinel) the
 
 * [Installation](#installation)
   * [Laravel 5 Installation](#installation-for-Laravel-5)
-  * [Laravel 4 Installation](#installation-for-Laravel-4)
 * [Configuration](#configuration)
   * [Service Provider](#the-service-provider)
 * [Contributing](#contributing);
@@ -31,7 +30,7 @@ You can install Laravel-PSRedis easily with composer.
 
 ```
 	"require": {  
-        "indatus/laravel-ps-redis": "dev-master",
+        "itryit/laravel-ps-redis": "v2.0",
     },
 ```
 
@@ -110,7 +109,7 @@ redis service provider.
 	'providers' => [
 		...
 		// 'Illuminate\Redis\RedisServiceProvider', # comment this out
-		'Indatus\LaravelPSRedis\LaravelPSRedisServiceProvider' # add this
+		'Itryit\LaravelPSRedisHelper\LaravelPSRedisServiceProvider' # add this
 	],
 ```
 
@@ -136,4 +135,4 @@ Feel free to clone the repo and run the unit tests locally.
 
 <a name="license" />
 ## License
-[The MIT License (MIT)](https://github.com/Indatus/laravel-PSRedis/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/iTryIt/laravel-PSRedis/blob/master/LICENSE)

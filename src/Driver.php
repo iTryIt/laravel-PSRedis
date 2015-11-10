@@ -1,4 +1,4 @@
-<?php namespace LaravelPSRedisHelper;
+<?php namespace Itryit\LaravelPSRedisHelper;
 
 use PSRedis\Client as PSRedisClient;
 use PSRedis\MasterDiscovery;
