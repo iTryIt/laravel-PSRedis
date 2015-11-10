@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Itryit\\LaravelPSRedis\\": "src/"
+            "Itryit\\LaravelPSRedisHelper\\": "src/"
         }
     },
     "minimum-stability": "dev",
