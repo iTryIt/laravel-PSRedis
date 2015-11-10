@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Indatus\\LaravelPSRedis\\": "src/"
+            "Itryit\\LaravelPSRedis\\": "src/"
         }
     },
     "minimum-stability": "dev",
