@@ -7,11 +7,13 @@ use Config;
 use App;
 use PSRedis\MasterDiscovery\BackoffStrategy\Incremental;
 
+
 /**
  * Class Driver
  *
  * @copyright  Indatus 2014
  * @author     Damien Russell <drussell@indatus.com>
+ * @author     Aaron King <383560140@qq.com>
  */
 class Driver
 {
@@ -25,8 +27,7 @@ class Driver
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->setUpMasterDiscovery();
 
         $this->addSentinels();
@@ -43,8 +44,7 @@ class Driver
      *
      * @return array
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return [
             'cluster' => Config::get('database.redis.cluster'),
             'default' => [
@@ -54,8 +54,7 @@ class Driver
         ];
     }
 
-    public function getBackOffStrategy()
-    {
+    public function getBackOffStrategy() {
         /** @var array $backOffConfig */
         $backOffConfig = Config::get('database.redis.backoff-strategy');
 
@@ -72,8 +71,7 @@ class Driver
         return $incrementalBackOff;
     }
 
-    public function setUpMasterDiscovery()
-    {
+    public function setUpMasterDiscovery() {
         $this->masterDiscovery = App::make(
             'PSRedis\MasterDiscovery',
             [Config::get('database.redis.nodeSetName')]
@@ -82,10 +80,9 @@ class Driver
         $this->masterDiscovery->setBackoffStrategy($this->getBackOffStrategy());
     }
 
-    public function addSentinels()
-    {
+    public function addSentinels() {
         $clients = Config::get('database.redis.masters');
-        foreach($clients as $client) {
+        foreach ($clients as $client) {
             $sentinel = App::make(
                 'PSRedis\Client',
                 [$client['host'], $client['port']]

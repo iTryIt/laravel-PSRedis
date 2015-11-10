@@ -3,6 +3,7 @@
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Redis\Database;
 
+
 class LaravelPSRedisServiceProvider extends ServiceProvider
 {
 
