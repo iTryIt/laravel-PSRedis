@@ -1,10 +1,10 @@
 {
     "name": "itryit/laravel-ps-redis",
-    "description": "A simple sentinel/redis driver wrapper for laravel. Rewrited For jamescauwelier/psredis",
+    "description": "A simple sentinel/redis driver wrapper for laravel 5.*. Rewrited For jamescauwelier/psredis",
     "authors": [
         {
             "name": "Damien Russell(origin), iTryIt",
-            "email": "drussell@indatus.com"
+            "email": "drussell@indatus.com, 409970188@qq.com"
         }
     ],
     "require": {
@@ -18,16 +18,10 @@
         "mockery/mockery": "0.9.*@dev"
     },
     "autoload": {
-        "classmap": [
-            "src/lib"
-        ],
-        "psr-0": {
+        "psr-4": {
             "Indatus\\LaravelPSRedis\\": "src/"
         }
     },
-    "psr-4": {
-        "": "src/lib"
-    },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "license": "MIT"
 }
