@@ -68,9 +68,12 @@ Just overwrite those with the values below and fill in your server info.
 	'redis' => [
 
    		/** the name of the redis node set */
-    	'nodeSetName' => 'sentinel-node-set',
+    	'nodeSetName' => 'your-sentinel-node-set-name',
 
     	'cluster' => false,
+
+    	/** database config is supported since version 2.1 */
+    	'database' => 0,
 
 	    /** Array of sentinels */
 	    'masters' => [
