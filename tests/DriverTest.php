@@ -79,9 +79,9 @@ class DriverTest extends BaseTest
      */
     public function it_instantiates()
     {
-        Config::shouldReceive('get')->once()->with('database.redis.nodeSetName')->andReturn('node-set');
-        Config::shouldReceive('get')->once()->with('database.redis.masters')->andReturn($this->masters);
-        Config::shouldReceive('get')->with('database.redis.backoff-strategy')->andReturn($this->backOffStrategy);
+        Config::shouldReceive('get')->once()->with('database.' . Config::get('database.redisConfigName', 'redis') . '.nodeSetName')->andReturn('node-set');
+        Config::shouldReceive('get')->once()->with('database.' . Config::get('database.redisConfigName', 'redis') . '.masters')->andReturn($this->masters);
+        Config::shouldReceive('get')->with('database.' . Config::get('database.redisConfigName', 'redis') . '.backoff-strategy')->andReturn($this->backOffStrategy);
 
         $this->driverUnderTest = new Driver();
 
@@ -103,10 +103,10 @@ class DriverTest extends BaseTest
             ]
         ];
 
-        Config::shouldReceive('get')->once()->with('database.redis.nodeSetName')->andReturn('node-set');
-        Config::shouldReceive('get')->once()->with('database.redis.masters')->andReturn($this->masters);
-        Config::shouldReceive('get')->with('database.redis.backoff-strategy')->andReturn($this->backOffStrategy);
-        Config::shouldReceive('get')->with('database.redis.cluster')->andReturn(false);
+        Config::shouldReceive('get')->once()->with('database.' . Config::get('database.redisConfigName', 'redis') . '.nodeSetName')->andReturn('node-set');
+        Config::shouldReceive('get')->once()->with('database.' . Config::get('database.redisConfigName', 'redis') . '.masters')->andReturn($this->masters);
+        Config::shouldReceive('get')->with('database.' . Config::get('database.redisConfigName', 'redis') . '.backoff-strategy')->andReturn($this->backOffStrategy);
+        Config::shouldReceive('get')->with('database.' . Config::get('database.redisConfigName', 'redis') . '.cluster')->andReturn(false);
 
         $this->HAClient->shouldReceive('getIpAddress')->once()->andReturn($this->masters[0]['host']);
         $this->HAClient->shouldReceive('getPort')->once()->andReturn($this->masters[0]['port']);

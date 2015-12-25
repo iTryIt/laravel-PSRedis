@@ -30,7 +30,7 @@ You can install Laravel-PSRedis easily with composer.
 
 ```
 	"require": {  
-        "itryit/laravel-ps-redis": "v2.0",
+        "itryit/laravel-ps-redis": "v2.2",
     },
 ```
 
@@ -65,6 +65,9 @@ You may already have some default laravel config values in place in your databas
 Just overwrite those with the values below and fill in your server info.
 
 ```
+	/** redisConfigName config is supported since version 2.2 */
+	'redisConfigName' => 'redis', // your redis setting key name, 'redis' for default, this would be compatible with past versions
+
 	'redis' => [
 
    		/** the name of the redis node set */
@@ -73,7 +76,7 @@ Just overwrite those with the values below and fill in your server info.
     	'cluster' => false,
 
     	/** database config is supported since version 2.1 */
-    	'database' => 0,
+    	'database' => 0, // redis database choice
 
 	    /** Array of sentinels */
 	    'masters' => [

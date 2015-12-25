@@ -46,18 +46,18 @@ class Driver
      */
     public function getConfig() {
         return [
-            'cluster' => Config::get('database.redis.cluster'),
+            'cluster' => Config::get('database.' . Config::get('database.redisConfigName', 'redis') . '.cluster'),
             'default' => [
                 'host' => $this->HAClient->getIpAddress(),
                 'port' => $this->HAClient->getPort(),
-                'database' => Config::get('database.redis.database'),
+                'database' => Config::get('database.' . Config::get('database.redisConfigName', 'redis') . '.database'),
 ]
         ];
     }
 
     public function getBackOffStrategy() {
         /** @var array $backOffConfig */
-        $backOffConfig = Config::get('database.redis.backoff-strategy');
+        $backOffConfig = Config::get('database.' . Config::get('database.redisConfigName', 'redis') . '.backoff-strategy');
 
         /** @var Incremental $incrementalBackOff */
         $incrementalBackOff = App::make(
@@ -75,14 +75,14 @@ class Driver
     public function setUpMasterDiscovery() {
         $this->masterDiscovery = App::make(
             'PSRedis\MasterDiscovery',
-            [Config::get('database.redis.nodeSetName')]
+            [Config::get('database.' . Config::get('database.redisConfigName', 'redis') . '.nodeSetName')]
         );
 
         $this->masterDiscovery->setBackoffStrategy($this->getBackOffStrategy());
     }
 
     public function addSentinels() {
-        $clients = Config::get('database.redis.masters');
+        $clients = Config::get('database.' . Config::get('database.redisConfigName', 'redis') . '.masters');
         foreach ($clients as $client) {
             $sentinel = App::make(
                 'PSRedis\Client',
